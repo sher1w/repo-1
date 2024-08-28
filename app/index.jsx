@@ -1,6 +1,6 @@
-import { ScrollView, View, Text, Image } from 'react-native'
+import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
-import { Redirect, router } from 'expo-router'
+import { Redirect, router, useNavigation } from 'expo-router'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import CustomButton from '../components/CustomButton'
 
@@ -9,6 +9,7 @@ const home = require("../assets/images/homeimg/home2.jpg")
 const stroke = require("../assets/images/homeimg/stroke.png")
 
 export default function App() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView className="bg-blackk h-full">
       <ScrollView contentContainerStyle={{height: '100%'}}>
@@ -38,15 +39,21 @@ export default function App() {
           />
 
           <Text className="text-sm font-pregular text-gray-400 mt-7 text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aperiam sint, quo non rem reiciendis animi quos impedit tenetur dicta ab officiis cum aliquam, velit saepe aliquid voluptates. Repellendus, commodi.
+          Fuel your day with ease. Order your food online, skip the queue, and enjoy your meal wherever you like.
           </Text>
 
           <CustomButton
-            title="Continue with Email"
-            handlePress={()=>router.push('/sign-in')}
+            title="Sign-up"
+            handlePress={()=>router.push('/sign-up')}
             containerStyles={"w-full mt-7"}
-
           />
+
+          <View className="flex-row justify-center py-2">
+            <Text className="text-gray-300 font-semibold">Already have an account?</Text>
+            <TouchableOpacity onPress={() => router.push('sign-in')}>
+                <Text className="text-main font-semibold"> Log In</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
       <StatusBar backgroundColor="#161622" style='light'/>
