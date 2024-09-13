@@ -4,8 +4,8 @@
 
 // const ContactScreen = () => {
 //   return (
-//     <View className="flex-1 bg-black justify-center items-center p-4">
-//       <TouchableOpacity className="flex-row items-center mb-4" onPress={() => Linking.openURL('https://instagram.com/kafekoffeeknight')}>
+//     <View className="flex-1 bg-black justify-start items-center p-4 ">
+//       <TouchableOpacity className="flex-row items-center mb-4 mt-20" onPress={() => Linking.openURL('https://instagram.com/kafekoffeeknight')}>
 //         <Ionicons name="logo-instagram" size={24} color="pink" />
 //         <Text style={{fontSize:18}}className="text-white ml-2">@kafekoffeeknight</Text>
 //       </TouchableOpacity>
